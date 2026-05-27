@@ -9,14 +9,22 @@ import { ValidationError } from './utils/errors';
 
 const app = express();
 
-const corsOptions = {
-  origin: config.corsOrigin,
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://uitop-todo-test.vercel.app',
+];
+
+app.use(cors({
+  origin: allowedOrigins,
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-};
+}));
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.options('*', cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 app.use(express.json());
 
