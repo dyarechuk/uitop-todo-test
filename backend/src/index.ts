@@ -9,7 +9,15 @@ import { ValidationError } from './utils/errors';
 
 const app = express();
 
-app.use(cors({ origin: config.corsOrigin }));
+const corsOptions = {
+  origin: config.corsOrigin,
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 
 const todoController = new TodoController();

@@ -9,6 +9,9 @@
     "start": "node dist/index.js",
     "test": "jest"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
