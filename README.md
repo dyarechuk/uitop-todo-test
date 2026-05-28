@@ -1,6 +1,6 @@
 # Todo App with Categories
 
-[DEMO LINK]([https://come-back-weather-app.vercel.app/](https://uitop-todo-test.vercel.app/))
+[DEMO LINK](https://uitop-todo-test.vercel.app/)
 
 A full-stack todo application with category management, undo functionality, and bulk actions.
 
